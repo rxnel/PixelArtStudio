@@ -1,0 +1,43 @@
+body {
+  background: #e5e3e3;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333333;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.canvas {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  margin: 20px;
+  margin-top: auto;
+  width: 512px;
+  height: 512px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+}
+
+.cell {
+  background-color: blue;
+  width: 28px;
+  height: 28px;
+  border: 2px solid black;
+}
+
+.cell:hover {
+  background-color: red;
+}
