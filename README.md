@@ -1,1 +1,1 @@
-# etch-a-sketch
+# Pixel Art Studio
