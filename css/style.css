@@ -81,6 +81,10 @@ button {
   transition: all 0.15s;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 button,
 input[type="color"] {
   transition: transform 0.1s ease-in-out;
@@ -111,24 +115,4 @@ input[type="color"]::-webkit-color-swatch {
   border: none;
   border-radius: 50px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-h4 {
-  margin-bottom: auto;
-}
-input[type="text"] {
-  width: 200px;
-  height: 40px;
-  border: none;
-  border-radius: 0.12em;
-  box-sizing: border-box;
-  text-decoration: none;
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  font-size: 18px;
-  color: #000000;
-  text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
-  background-color: #ffffff;
-  text-align: center;
-  transition: all 0.15s;
 }
