@@ -35,8 +35,48 @@ body {
   background-color: #f2f1f1;
   width: 30px;
   height: 30px;
-  border: 1px solid black;
+  border: 1px solid rgb(184, 182, 182);
 }
 
-.colorPicker {
+input {
+  background-color: #e5e3e3;
+  width: 100%;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+button,
+input[type="color"] {
+  transition: transform 0.1s ease-in-out;
+}
+
+button:hover,
+input[type="color"]:hover {
+  transform: scale(1.025);
+}
+
+input[type="color"]:active {
+  transition: transform 0.05s ease-in-out;
+  transform: scale(1);
+}
+
+input[type="color"] {
+  -webkit-appearance: none;
+  width: 80px;
+  height: 80px;
+  border: none;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }

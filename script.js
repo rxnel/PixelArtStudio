@@ -1,12 +1,14 @@
 const canvas = document.querySelector(".canvas");
 const colorPicker = document.querySelector(".colorPicker");
 const clearBtn = document.querySelector(".clearBtn");
+const eraserBtn = document.querySelector(".eraserBtn");
+let currentColor = "#000000";
+let drawMode = false;
+let eraserMode = false;
 
 clearBtn.addEventListener("click", clearGrid);
 colorPicker.onchange = (e) => setCurrentColor(e.target.value);
-
-let currentColor = "#000000";
-let drawMode = false;
+eraserBtn.addEventListener("click", activateEraserMode);
 
 // go through each cell and set its background color
 function clearGrid() {
@@ -16,19 +18,26 @@ function clearGrid() {
 }
 
 function setCurrentColor(newColor) {
+  eraserMode = false;
   currentColor = newColor;
 }
 
 function changeColor(cell) {
   if (drawMode) {
-    cell.target.style.backgroundColor = currentColor;
+    if (eraserMode) {
+      cell.target.style.backgroundColor = "#f2f1f1";
+    } else {
+      cell.target.style.backgroundColor = currentColor;
+    }
   }
 }
 
 function activateDrawMode() {
-  console.log("click");
   drawMode = !drawMode;
-  console.log(drawMode);
+}
+
+function activateEraserMode() {
+  eraserMode = !eraserMode;
 }
 
 // create 16x16 grid of squares in the canvas
