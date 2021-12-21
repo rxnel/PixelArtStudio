@@ -4,38 +4,51 @@ body {
   font-size: 14px;
   line-height: 20px;
   color: #333333;
+  text-align: center;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: 300;
+  line-height: 40px;
+  margin: 0 0 20px;
 }
 
 .container {
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 
 .canvas {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  margin: 20px;
-  margin-top: auto;
+  display: grid;
   width: 512px;
   height: 512px;
+  background-color: var(--secondary-light);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-top: 5px;
+  margin-left: 15px;
 }
 
-.controls {
+.sidebar {
   display: flex;
-  flex-direction: row;
-  gap: 25px;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  width: 250px;
+}
+
+.sidebar p {
+  width: 200px;
 }
 
 .cell {
   background-color: #f2f1f1;
-  width: 30px;
-  height: 30px;
-  border: 1px solid rgb(184, 182, 182);
+
+  border: 0px solid rgb(184, 182, 182);
 }
 
 input {
@@ -47,6 +60,25 @@ input {
   font-size: inherit;
   cursor: pointer;
   outline: none;
+}
+
+button {
+  display: inline-block;
+  width: 200px;
+  padding: 0.46em 1.6em;
+  border: 0.1em solid #000000;
+  margin: 0 0.2em 0.2em 0;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  color: #000000;
+  text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+  background-color: #ffffff;
+  text-align: center;
+  transition: all 0.15s;
 }
 
 button,
@@ -79,4 +111,24 @@ input[type="color"]::-webkit-color-swatch {
   border: none;
   border-radius: 50px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+h4 {
+  margin-bottom: auto;
+}
+input[type="text"] {
+  width: 200px;
+  height: 40px;
+  border: none;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  color: #000000;
+  text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+  background-color: #ffffff;
+  text-align: center;
+  transition: all 0.15s;
 }

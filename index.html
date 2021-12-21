@@ -4,26 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Etch-A-Sketch</title>
+    <title>Pixel Art Studio</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div class="title">
+        <h1>Pixel Art Studio</h1>
+    </div> 
     <div class="container">
-        <div class="title">
-            <h1>Etch-A-Sketch</h1>
+        <div class="sidebar">
+            <input class="colorPicker" type="color" value="#000000"> 
+            <button class="clearBtn">Clear</button>
+            <button class="eraserBtn">Erase</button>
+            <button class="toggleBorderBtn">Toggle Border</button>
+            <p>Click inside the canvas to start drawing. Click again to stop.</p>
+            <!-- <h4># of rows and columns</h4>
+            <input class="sizeTextBox" type="text" value="16">
+            <button class="sizeBtn">Change Size</button> -->
         </div>
-        <div class="canvas">
-        </div>
-        <div class="controls">
-            <div class="controls-left">
-                <button class="clearBtn">Clear</button>
-                <button class="eraserBtn">Erase</button>
-            </div>
-            <div class="controls-right">
-               <input class="colorPicker" type="color" value="#000000"> 
-            </div>
-        </div>
-
+        <div class="canvas"></div>
     </div>
     <script src="script.js"></script>
 </body>

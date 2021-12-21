@@ -2,18 +2,39 @@ const canvas = document.querySelector(".canvas");
 const colorPicker = document.querySelector(".colorPicker");
 const clearBtn = document.querySelector(".clearBtn");
 const eraserBtn = document.querySelector(".eraserBtn");
-let currentColor = "#000000";
+const toggleBorderBtn = document.querySelector(".toggleBorderBtn");
+
+const DEFAULT_COLOR = "#000000";
+const DEFAULT_MODE = "color";
+const DEFAULT_SIZE = 16;
+
+let currentColor = DEFAULT_COLOR;
 let drawMode = false;
 let eraserMode = false;
+let borderToggle = false;
 
 clearBtn.addEventListener("click", clearGrid);
 colorPicker.onchange = (e) => setCurrentColor(e.target.value);
 eraserBtn.addEventListener("click", activateEraserMode);
+toggleBorderBtn.addEventListener("click", toggleBorder);
 
-// go through each cell and set its background color
 function clearGrid() {
   for (let i = 0; i < canvas.children.length; i++) {
     canvas.children[i].style.backgroundColor = "#f2f1f1";
+  }
+}
+
+function toggleBorder() {
+  if (!borderToggle) {
+    for (let i = 0; i < canvas.children.length; i++) {
+      canvas.children[i].style.border = "1px solid black";
+    }
+    borderToggle = true;
+  } else {
+    for (let i = 0; i < canvas.children.length; i++) {
+      canvas.children[i].style.border = "none";
+    }
+    borderToggle = false;
   }
 }
 
@@ -40,17 +61,18 @@ function activateEraserMode() {
   eraserMode = !eraserMode;
 }
 
-// create 16x16 grid of squares in the canvas
-function setupGrid() {
-  for (let i = 0; i < 16; i++) {
-    for (let j = 0; j < 16; j++) {
-      let cell = document.createElement("div");
-      cell.classList.add("cell");
-      cell.addEventListener("mouseover", changeColor);
-      cell.addEventListener("click", activateDrawMode);
-      canvas.appendChild(cell);
-    }
+function setupGrid(size) {
+  canvas.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+  canvas.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+  for (let i = 0; i < size * size; i++) {
+    let cell = document.createElement("div");
+    cell.classList.add("cell");
+    cell.addEventListener("mouseover", changeColor);
+    cell.addEventListener("click", activateDrawMode);
+    canvas.appendChild(cell);
   }
 }
 
-setupGrid();
+window.onload = () => {
+  setupGrid(DEFAULT_SIZE);
+};
