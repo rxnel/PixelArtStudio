@@ -32,12 +32,11 @@ body {
 }
 
 .cell {
-  background-color: blue;
-  width: 28px;
-  height: 28px;
-  border: 2px solid black;
+  background-color: #f2f1f1;
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
 }
 
-.cell:hover {
-  background-color: red;
+.colorPicker {
 }
