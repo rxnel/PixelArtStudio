@@ -1,2 +1,2 @@
 # Pixel Art Studio
-![alt text](https://imgur.com/a/HDs57mO.png)
+![alt text](https://i.imgur.com/4bZnbmD.png)
